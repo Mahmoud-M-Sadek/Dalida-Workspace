@@ -31,6 +31,8 @@ const Header: React.FC = () => {
     { name: 'الموقع', href: '#location' },
   ];
 
+  const logoUrl = "https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/420486948_122135900438085116_5791087745974560455_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=AgdaVoM5geEQ7kNvwEE6fgB&_nc_oc=Admq3OGb9lq3K0rK7ba6s9d4vfRKYsy-WUgn1bQrhSU4FMZ0wmZ1O-YqQ2NFhglmJRw&_nc_zt=23&_nc_ht=scontent.fcai19-3.fna&_nc_gid=Enc1Km_zV-OiS1vc33H48w&oh=00_AfgCBsjEygktQ63tXj3nwzILRb7wUQYIdYEJxcuV4jaioA&oe=6927679A";
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -38,9 +40,9 @@ const Header: React.FC = () => {
         {/* Logo / Brand - Using the user provided image */}
         <a href="#home" className="block">
           <img 
-            src="/logo.png" 
+            src={logoUrl}
             alt="Dalida Co-working Space" 
-            className="h-16 w-auto object-contain"
+            className="h-24 md:h-28 w-auto object-contain mix-blend-screen"
             onError={(e) => {
               // Fallback to text if image fails to load
               e.currentTarget.style.display = 'none';

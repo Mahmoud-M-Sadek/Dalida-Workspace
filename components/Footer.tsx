@@ -20,6 +20,8 @@ const TikTokIcon = ({ size = 24, className = "" }) => (
 );
 
 const Footer: React.FC = () => {
+  const logoUrl = "https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/420486948_122135900438085116_5791087745974560455_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=AgdaVoM5geEQ7kNvwEE6fgB&_nc_oc=Admq3OGb9lq3K0rK7ba6s9d4vfRKYsy-WUgn1bQrhSU4FMZ0wmZ1O-YqQ2NFhglmJRw&_nc_zt=23&_nc_ht=scontent.fcai19-3.fna&_nc_gid=Enc1Km_zV-OiS1vc33H48w&oh=00_AfgCBsjEygktQ63tXj3nwzILRb7wUQYIdYEJxcuV4jaioA&oe=6927679A";
+
   return (
     <footer id="location" className="bg-black text-white pt-16 pb-8 border-t border-zinc-900">
       <div className="container mx-auto px-4">
@@ -29,9 +31,9 @@ const Footer: React.FC = () => {
           <div>
             <div className="mb-6">
                <img 
-                  src="/logo.png" 
+                  src={logoUrl}
                   alt="Dalida Co-working Space" 
-                  className="h-24 w-auto object-contain"
+                  className="h-32 w-auto object-contain mix-blend-screen"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.nextElementSibling?.classList.remove('hidden');
