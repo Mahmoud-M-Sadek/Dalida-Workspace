@@ -2,7 +2,8 @@ import { GoogleGenAI } from "@google/genai";
 
 // Initialize the client
 // The API key must be obtained exclusively from the environment variable process.env.API_KEY.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// We cast to string because the build process ensures this is replaced, but TS needs to know it's a string.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 export const chatWithDalidaAssistant = async (userMessage: string, history: string[]): Promise<string> => {
   try {
