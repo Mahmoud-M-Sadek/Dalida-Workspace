@@ -26,11 +26,12 @@ export const chatWithDalidaAssistant = async (userMessage: string, history: stri
       - الإجابة باختصار ووضوح.
     `;
 
+    // Combine context and history into a single text prompt for robustness
+    const fullPrompt = `System Context: ${systemInstruction}\n\nConversation History: ${history.join('\n')}\n\nCurrent User Question: ${userMessage}`;
+
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: [
-        { role: 'user', parts: [{ text: `System Context: ${systemInstruction}\n\nConversation History: ${history.join('\n')}\n\nCurrent User Question: ${userMessage}` }] }
-      ],
+      contents: fullPrompt,
       config: {
         temperature: 0.7,
       }
